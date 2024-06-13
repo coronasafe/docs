@@ -7,3 +7,4 @@ remain lean and allowing the possibilities for complex systems built around it.
 ## Supported Apps
 
 [Scribe](/docs/care/apps/scribe/)
+[Discharge Summary](/docs/care/apps/discharge_summary/)
