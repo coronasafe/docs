@@ -1,0 +1,1668 @@
+{
+	"info": {
+		"_postman_id": "07eeb69c-4308-4e21-b7a4-0cf972bb4aaf",
+		"name": "Care ABDM 2.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4681660",
+		"_collection_link": "https://coronasafe.postman.co/workspace/CARE~4bdb78ad-8153-4103-8e9b-0b1f5c6e2df9/collection/4681660-07eeb69c-4308-4e21-b7a4-0cf972bb4aaf?action=share&source=collection_link&creator=4681660"
+	},
+	"item": [
+		{
+			"name": "M1",
+			"item": [
+				{
+					"name": "Create ABHA Using Aadhaar Otp",
+					"item": [
+						{
+							"name": "abha_create__send_aadhaar_otp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if(pm.response.code == 200){",
+											"    pm.environment.set(\"TRANSACTION_ID\",pm.response.json().transaction_id);",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"aadhaar\": \"927625613322\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/health_id/create/send_aadhaar_otp",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"health_id",
+										"create",
+										"send_aadhaar_otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "abha_create__verify_aadhaar_otp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if(pm.response.code == 200){",
+											"    pm.environment.set(\"TRANSACTION_ID\",pm.response.json().transaction_id);",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"transaction_id\": \"{{TRANSACTION_ID}}\",\n    \"otp\": \"534549\",\n    \"mobile\": \"7639899448\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/health_id/create/verify_aadhaar_otp",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"health_id",
+										"create",
+										"verify_aadhaar_otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "abha_create__link_mobile_number",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if(pm.response.code == 200){",
+											"    pm.environment.set(\"TRANSACTION_ID\",pm.response.json().transaction_id);",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"transaction_id\": \"{{TRANSACTION_ID}}\",\n    \"mobile\": \"7639899448\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/health_id/create/link_mobile_number",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"health_id",
+										"create",
+										"link_mobile_number"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "abha_create__verify_mobile_otp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if(pm.response.code == 200){",
+											"    pm.environment.set(\"TRANSACTION_ID\",pm.response.json().transaction_id);",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"transaction_id\": \"{{TRANSACTION_ID}}\",\n    \"otp\": \"549878\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/health_id/create/verify_mobile_otp",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"health_id",
+										"create",
+										"verify_mobile_otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "abha_create__abha_address_suggestion",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if(pm.response.code == 200){",
+											"    pm.environment.set(\"TRANSACTION_ID\",pm.response.json().transaction_id);",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"transaction_id\": \"{{TRANSACTION_ID}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/health_id/create/abha_address_suggestion",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"health_id",
+										"create",
+										"abha_address_suggestion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "abha_create__enrol_abha_address",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if(pm.response.code == 200){",
+											"    pm.environment.set(\"TRANSACTION_ID\",pm.response.json().transaction_id);",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"transaction_id\": \"{{TRANSACTION_ID}}\",\n    \"abha_address\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/health_id/create/enrol_abha_address",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"health_id",
+										"create",
+										"enrol_abha_address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "link_abha_number_and_patient",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"abha_number\": \"1eddb607-e2c6-4f5a-846d-551dabe744e3\",\n    \"patient\": \"0f9552bd-1498-4b92-8f62-a83ad6f493b6\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/health_id/link_patient",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"health_id",
+										"link_patient"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login ABHA Using Otp",
+					"item": [
+						{
+							"name": "abha_login__send_otp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if(pm.response.code == 200){",
+											"    pm.environment.set(\"TRANSACTION_ID\",pm.response.json().transaction_id);",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// {\n//     \"type\": \"aadhaar\",\n//     \"value\": \"927625613322\",\n//     \"otp_system\": \"aadhaar\"\n// }\n\n// {\n//     \"type\": \"mobile\",\n//     \"value\": \"7639899448\",\n//     \"otp_system\": \"abdm\"\n// }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/health_id/login/send_otp",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"health_id",
+										"login",
+										"send_otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "abha_login__check_auth_methods",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if(pm.response.code == 200){",
+											"    pm.environment.set(\"TRANSACTION_ID\",pm.response.json().transaction_id);",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"abha_address\": \"khavinshankar@sbx\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/health_id/login/check_auth_methods",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"health_id",
+										"login",
+										"check_auth_methods"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "abha_login__verify_otp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if(pm.response.code == 200){",
+											"    pm.environment.set(\"TRANSACTION_ID\",pm.response.json().transaction_id);",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// {\n//     \"type\": \"aadhaar\",\n//     \"otp\": \"753447\",\n//     \"transaction_id\": \"{{TRANSACTION_ID}}\",\n//     \"otp_system\": \"aadhaar\"\n// }\n\n// {\n//     \"type\": \"mobile\",\n//     \"otp\": \"527022\",\n//     \"transaction_id\": \"{{TRANSACTION_ID}}\",\n//     \"otp_system\": \"abdm\"\n// }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/health_id/login/verify_otp",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"health_id",
+										"login",
+										"verify_otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "link_abha_number_and_patient",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"abha_number\": \"1eddb607-e2c6-4f5a-846d-551dabe744e3\",\n    \"patient\": \"0f9552bd-1498-4b92-8f62-a83ad6f493b6\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/health_id/link_patient",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"health_id",
+										"link_patient"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Abha Number",
+					"item": [
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/abha_number/{{PATIENT_ID}}",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"abha_number",
+										"{{PATIENT_ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "abha_card",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/health_id/abha_card?abha_id=91-3485-3638-4236",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"health_id",
+										"abha_card"
+									],
+									"query": [
+										{
+											"key": "abha_id",
+											"value": "91-3485-3638-4236"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"C/O Gopalsamy NO 33 A WESTSTREET ODANILAI KASTHURIBAI GRAMAM ARACHALUR Erode\",\n    \"district\": \"Erode\",\n    \"state\": \"TAMIL NADU\",\n    \"health_id\": \"khavinshankar@sbx\",\n    \"mobile\": \"7639899448\",\n    \"gender\": \"M\",\n    \"date_of_birth\": \"18-1-1999\",\n    \"name\": \"KhavinShankar G\",\n    \"abha_number\": \"91-3485-3638-4236\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/abha_number",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"abha_number"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "M2",
+			"item": [
+				{
+					"name": "Health Facility",
+					"item": [
+						{
+							"name": "list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/health_facility",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"health_facility"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/health_facility/{{FACILITY_ID}}",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"health_facility",
+										"{{FACILITY_ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"facility\": \"{{FACILITY_ID}}\",\n    \"hf_id\": \"{{HIP_ID}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/health_facility",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"health_facility"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"facility\": \"{{FACILITY_ID}}\",\n    \"hf_id\": \"{{HIP_ID}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/health_facility/{{FACILITY_ID}}",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"health_facility",
+										"{{FACILITY_ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "partial_update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"hf_id\": \"{{HIP_ID}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/health_facility/{{FACILITY_ID}}",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"health_facility",
+										"{{FACILITY_ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "register_service",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/health_facility/{{FACILITY_ID}}/register_service",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"health_facility",
+										"{{FACILITY_ID}}",
+										"register_service"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "HIP Initiated Care Context Linking",
+					"item": [
+						{
+							"name": "link__carecontext",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"consultations\": [\"6bb5143b-eb4e-48fc-a9dc-1ef5c4598d96\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://work.khavinshankar.dev/v3/hip/link__carecontext",
+									"protocol": "https",
+									"host": [
+										"work",
+										"khavinshankar",
+										"dev"
+									],
+									"path": [
+										"v3",
+										"hip",
+										"link__carecontext"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Callback APIs",
+					"item": [
+						{
+							"name": "hip__token__on_generate_token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/hip/token/on-generate-token",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"hip",
+										"token",
+										"on-generate-token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "link__on_carecontext",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/link/on_carecontext",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"link",
+										"on_carecontext"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hip__patient__care_context__discover",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/hip/patient/care-context/discover",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"hip",
+										"patient",
+										"care-context",
+										"discover"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hip__link__care_context__init",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/hip/link/care-context/init",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"hip",
+										"link",
+										"care-context",
+										"init"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hip__link__care_context__confirm",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/hip/link/care-context/confirm",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"hip",
+										"link",
+										"care-context",
+										"confirm"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "consent__request__hip__notify",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/consent/request/hip/notify",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"consent",
+										"request",
+										"hip",
+										"notify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hip__health_information__request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/hip/health-information/request",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"hip",
+										"health-information",
+										"request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hip__patient__share",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"intent\": \"PROFILE_SHARE\",\n    \"metaData\": {\n        \"hipId\": \"IN3210000018\",\n        \"context\": \"12345\",\n        \"hprId\": \"abdulkalam@hpr.abdm\",\n        \"latitude\": \"11.1234843\",\n        \"longitude\": \"77.6898631\"\n    },\n    \"profile\": {\n        \"patient\": {\n            \"abhaNumber\": \"91-3753-8417-4542\",\n            \"abhaAddress\": \"mohammed_258@sbx\",\n            \"name\": \"Mohammed Nihal\",\n            \"gender\": \"M\",\n            \"dayOfBirth\": \"25\",\n            \"monthOfBirth\": \"8\",\n            \"yearOfBirth\": \"1999\",\n            \"address\": {\n                \"line\": \"Baith Al Mabrooq, Chandera, Maniyat, Kasargod, Kerala\",\n                \"district\": null,\n                \"state\": \"KERALA\",\n                \"pincode\": null\n            },\n            \"phoneNumber\": \"7736592618\"\n        }\n    }\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/hip/patient/share",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"hip",
+										"patient",
+										"share"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "Bearer {{AUTH_TOKEN}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "M3",
+			"item": [
+				{
+					"name": "Raise Consent Request and Request Data",
+					"item": [
+						{
+							"name": "verify_identity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"patient\": \"{{PATIENT_ID}}\"\n}\n\n// {\n//     \"abha_number\": \"{{ABHA_NUMBER}}\"\n// }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/hiu/verify_identity",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"hiu",
+										"verify_identity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "consent__request__init",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"hi_types\": [\n        \"Prescription\",\n        \"DiagnosticReport\",\n        \"OPConsultation\",\n        \"DischargeSummary\",\n        \"ImmunizationRecord\",\n        \"HealthDocumentRecord\",\n        \"WellnessRecord\"\n    ],\n    \"from_time\": \"2024-07-17T18:42:25.125Z\",\n    \"to_time\": \"2024-08-18T18:42:25.125Z\",\n    \"expiry\": \"2024-09-17T18:42:25.125Z\",\n    \"patient_abha\": \"khavinshankar_1999@sbx\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/hiu/create_consent_request",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"hiu",
+										"create_consent_request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "consent_request_status",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"consent_request\": \"{{CONSENT_ID}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/hiu/consent_request_status",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"hiu",
+										"consent_request_status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "fetch_consent_artefact",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"consent_request\": \"{{CONSENT_ID}}\"\n}\n\n// {\n//     \"consent_artefact\": \"{{ARTEFACT_ID}}\"\n// }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/hiu/fetch_consent_artefact",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"hiu",
+										"fetch_consent_artefact"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "request_health_information",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"consent_artefact\": \"{{ARTEFACT_ID}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/v3/hiu/request_health_information",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"v3",
+										"hiu",
+										"request_health_information"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Consent",
+					"item": [
+						{
+							"name": "list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/consent",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"consent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/consent/{{CONSENT_ID}}",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"consent",
+										"{{CONSENT_ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"patient_abha\": \"{{PATIENT_IDENTIFIER}}\",\n    \"hi_types\": [\n        \"Prescription\",\n        \"DiagnosticReport\",\n        \"OPConsultation\",\n        \"DischargeSummary\",\n        \"ImmunizationRecord\",\n        \"HealthDocumentRecord\",\n        \"WellnessRecord\"\n    ],\n    \"purpose\": \"CAREMGT\",\n    \"from_time\": \"2023-09-10\",\n    \"to_time\": \"2024-09-04\",\n    \"expiry\": \"2024-11-10\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/consent",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"consent"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Health Information",
+					"item": [
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/health_information/{{ARTEFACT_ID}}",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"health_information",
+										"{{ARTEFACT_ID}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Callback APIs",
+					"item": [
+						{
+							"name": "hiu__consent__request__on_init",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/hiu/consent/request/on-init",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"hiu",
+										"consent",
+										"request",
+										"on-init"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hiu__consent__request__on_status",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/hiu/consent/request/on-status",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"hiu",
+										"consent",
+										"request",
+										"on-status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hiu__consent__request__notify",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/hiu/consent/request/notify",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"hiu",
+										"consent",
+										"request",
+										"notify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hiu__consent__on_fetch",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/hiu/consent/on-fetch",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"hiu",
+										"consent",
+										"on-fetch"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hiu__health_information__on_request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/hiu/health-information/on-request",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"hiu",
+										"health-information",
+										"on-request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hiu__health_information__transfer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CARE_ABDM_BASE_URL}}/api/v3/hiu/health-information/transfer",
+									"host": [
+										"{{CARE_ABDM_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"hiu",
+										"health-information",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Support",
+			"item": [
+				{
+					"name": "list_facility",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CARE_BASE_URL}}/api/v1/facility/",
+							"host": [
+								"{{CARE_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"facility",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_facility",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"facility_type\": \"2\",\n    \"name\": \"Name\",\n    \"district\": \"7\",\n    \"state\": \"1\",\n    \"address\": \"address\",\n    \"pincode\": \"682011\",\n    \"local_body\": \"298\",\n    \"features\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        6\n    ],\n    \"ward\": \"5309\",\n    \"kasp_empanelled\": false,\n    \"latitude\": null,\n    \"longitude\": null,\n    \"phone_number\": \"+917777777777\",\n    \"oxygen_capacity\": 0,\n    \"type_b_cylinders\": 0,\n    \"type_c_cylinders\": 0,\n    \"type_d_cylinders\": 0,\n    \"expected_oxygen_requirement\": 0,\n    \"expected_type_b_cylinders\": 0,\n    \"expected_type_c_cylinders\": 0,\n    \"expected_type_d_cylinders\": 0,\n    \"cancelToken\": {\n        \"promise\": {}\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CARE_BASE_URL}}/api/v1/facility/",
+							"host": [
+								"{{CARE_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"facility",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_facility",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CARE_BASE_URL}}/api/v1/facility/{{FACILITY_ID}}/",
+							"host": [
+								"{{CARE_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"facility",
+								"{{FACILITY_ID}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_patient",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(pm.response.code == 200){",
+									"    pm.environment.set(\"PATIENT_ID\",pm.response.json().results[0].id);",
+									"    pm.environment.set(\"FACILITY_ID\",pm.response.json().results[0].facility);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CARE_BASE_URL}}/api/v1/patient/?facility={{FACILITY_ID}}",
+							"host": [
+								"{{CARE_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient",
+								""
+							],
+							"query": [
+								{
+									"key": "facility",
+									"value": "{{FACILITY_ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_patient",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(pm.response.code == 201){",
+									"    pm.environment.set(\"PATIENT_ID\",pm.response.json().id);",
+									"    pm.environment.set(\"FACILITY_ID\",pm.response.json().facility);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"facility\": \"{{FACILITY_ID}}\",\n    \"name\": \"{{NAME}}\",\n    \"gender\": 1,\n    \"is_antenatal\": false,\n    \"phone_number\": \"{{MOBILE_NUMBER}}\",\n    \"emergency_phone_number\": \"{{MOBILE_NUMBER}}\",\n    \"date_of_birth\": \"{{DOB_Y}}-{{DOB_M}}-{{DOB_D}}\",\n    \"blood_group\": \"UNK\",\n    \"nationality\": \"India\",\n    \"address\": \"{{ADDRESS}}\",\n    \"pincode\": null,\n    \"state\": null,\n    \"district\": null,\n    \"local_body\": null,\n    \"ward\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CARE_BASE_URL}}/api/v1/patient/",
+							"host": [
+								"{{CARE_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_patient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CARE_BASE_URL}}/api/v1/patient/{{PATIENT_ID}}/",
+							"host": [
+								"{{CARE_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"patient",
+								"{{PATIENT_ID}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_consultation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CARE_BASE_URL}}/api/v1/consultation/?patient={{PATIENT_ID}}",
+							"host": [
+								"{{CARE_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"consultation",
+								""
+							],
+							"query": [
+								{
+									"key": "patient",
+									"value": "{{PATIENT_ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_consultation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CARE_BASE_URL}}/api/v1/consultation/{{CONSULTATION_ID}}/",
+							"host": [
+								"{{CARE_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"consultation",
+								"{{CONSULTATION_ID}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_consultation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"suggestion\": \"A\",\n    \"route_to_facility\": 10,\n    \"admitted\": true,\n    \"encounter_date\": \"2024-09-10T03:17:02.498Z\",\n    \"category\": \"Stable\",\n    \"is_kasp\": \"false\",\n    \"kasp_enabled_date\": null,\n    \"examination_details\": \"\",\n    \"history_of_present_illness\": \"\",\n    \"treatment_plan\": \"\",\n    \"discharge_date\": null,\n    \"create_diagnoses\": [\n        {\n            \"diagnosis_object\": {\n                \"id\": 107388709,\n                \"label\": \"AA03 Otomycosis\",\n                \"chapter\": \"ENT\"\n            },\n            \"diagnosis\": 107388709,\n            \"verification_status\": \"unconfirmed\",\n            \"is_principal\": true\n        }\n    ],\n    \"create_symptoms\": [],\n    \"treating_physician\": \"1\",\n    \"investigation\": [],\n    \"procedure\": [],\n    \"patient\": \"{{PATIENT_ID}}\",\n    \"facility\": \"{{FACILITY_ID}}\",\n    \"consultation_notes\": \"\",\n    \"is_telemedicine\": \"false\",\n    \"action\": 10,\n    \"review_interval\": -1,\n    \"assigned_to\": \"\",\n    \"special_instruction\": \"\",\n    \"weight\": 0,\n    \"height\": 0,\n    \"patient_no\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CARE_BASE_URL}}/api/v1/consultation/",
+							"host": [
+								"{{CARE_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"consultation",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if(pm.response.code == 200){",
+							"    pm.environment.set(\"CARE_ACCESS_TOKEN\",pm.response.json().access);",
+							"    pm.environment.set(\"CARE_REFRESH_TOKEN\",pm.response.json().refresh);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"devdistrictadmin\",\n    \"password\": \"Coronasafe@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CARE_BASE_URL}}/api/v1/auth/login/",
+					"host": [
+						"{{CARE_BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{CARE_ACCESS_TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
