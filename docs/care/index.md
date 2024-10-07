@@ -8,3 +8,5 @@ Although Care supports most features of an EMR, it is capable of much more.
 [Care Enhancement Proposals (CEP)](/docs/care/CEP/)
 
 [Care Apps](/docs/care/apps/)
+
+[Ayushman Bharat Digital Mission (ABDM) Integration](/docs/care/ABDM/)
