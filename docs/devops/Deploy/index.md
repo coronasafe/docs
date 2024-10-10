@@ -1,0 +1,4 @@
+# Deploy Overview
+The Deployment section provides guides for deploying services across major cloud providers, ensuring a smooth experience. You'll find instructions for deploying [Care](./Care/index.md), and related components on [AWS](./Care/AWS/index.md), [GCP](./Care/GCP/index.md) , and [DigitalOcean](./Care/digitalOcean/index.md). These guides cover setting up accounts, configuring services, provisioning Kubernetes clusters, managing databases and storage, and deploying workloads.
+
+Additionally, this section explores Infrastructure as Code (IaC) tools like Terraform for automated and consistent deployments. It includes detailed instructions and best practices for deploying services such as [Care](./Care/index.md) on [AWS](./Care/AWS/index.md) and [DigitalOcean](./Care/digitalOcean/index.md), [OneUptime](./OneUptime/index.md) and the [oneuptime-automation](./OneUptime/oneuptime-automation.md) scripts
