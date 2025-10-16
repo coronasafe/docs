@@ -1,5 +1,5 @@
 ---
-title: User Documentation
+title: HMIS User Documentation
 sidebar_position: 2
 ---
 
